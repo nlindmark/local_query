@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query Engine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+        form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+            gap: 1em;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            height: 50px;
+            padding: 5px;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            width: 100px;
+            height: 50px;
+            font-size: 1em;
+        }
+        .result {
+            margin-top: 1em;
+            width: 50%;
+            background: #fff;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="question" placeholder="Enter your question here">
+        <input type="submit" value="Query">
+    </form>
+    {% if result %}
+    <div class="result">
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
